@@ -1,0 +1,692 @@
+body.waiting * {
+    cursor: progress;
+}
+/* Opening buttons - what do you want to do? */
+.homeHeader{
+	font-size:16pt; font-weight:100; margin-left:5px; margin-bottom:5px;
+}	
+.startButton{
+	padding:5px 10px; text-decoration:none; -moz-border-radius:1px; -webkit-border-radius:1px; border-radius:1px; -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5); box-shadow: 0 1px 3px rgba(0,0,0,0.5); border-bottom: 1px solid rgba(0,0,0,0.25); outline:none; position:relative; 
+	font-size: 16pt; margin:5px; 
+}
+.ready{
+	background-color: #7FB0F0; color: #FFF; text-shadow:0 -1px 1px rgba(0,0,0,0.25); font-weight:100; 
+}
+.ready:hover{
+	background-color: #29658C; cursor:pointer; 
+}
+.ready:active{
+	box-shadow: 1px 0px 3px rgba(0,0,0,0.5); text-shadow: 0 1px 1px rgba(0,0,0,0.25);
+}
+.readyHome{
+	width:66px; position:absolute; right:5px; top:5px; margin:0; 
+}
+.readyDL{
+	width:90px; margin:auto; font-size:12pt; padding:2px 5px; margin-bottom:5px; margin-top:10px;
+}	
+.comingSoon{
+	background-color: #7FB0F0; color: #ddd; text-shadow: 0 -1px 1px rgba(0,0,0,0.25); font-weight:100; 
+}
+/* Class that hides framework legend */
+.hideLegend{
+	display:none !important;
+}
+/* wrapper for top section of app */
+.topWrapper{ 
+	position:absolute; left:0px; top:30px; width:100%; height:45px; background-color:#fff; z-index:9; display:none;
+}	
+.topHeader{
+	font-size:14pt; width:290px; margin-top:3px; margin-left:10px; color:#21658c; font-weight:bold; 
+}
+.dlOspWrapper{
+	display:none;
+}	
+.dlSelectWrapper{
+	position:relative; top:43px; width:385px; text-align:center;
+}	
+.printWrapper{
+	margin-top:20px; width:395px; text-align:center; display:none;
+}
+.futureWrapper{
+	margin-top:50px; width:100%; text-align:left; display:none;
+}
+.futureCbs, .futureRads{
+	margin-left:18px;
+}
+.navWrapper{
+	width:100%; text-align:center; margin-top:-5px;
+}
+.ztpWrapper{
+	width:100%; margin-top:0px; margin-bottom:0px; display:inline-block; text-align:center;
+}
+.searchPinButton{
+	padding:5px; text-decoration:none; -moz-border-radius:1px; -webkit-border-radius:1px; border-radius:1px; -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5); box-shadow: 0 1px 3px rgba(0,0,0,0.5); border-bottom: 1px solid rgba(0,0,0,0.25); outline:none; display:inline-block; 
+	font-size: 12pt; margin:5px 0px 0px 5px; 
+}
+.queryParcels{
+	padding:5px; text-decoration:none; -moz-border-radius:1px; -webkit-border-radius:1px; border-radius:1px; -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5); box-shadow: 0 1px 3px rgba(0,0,0,0.5); border-bottom: 1px solid rgba(0,0,0,0.25); outline:none; display:inline-block; 
+	font-size: 12pt; margin:5px 0px 0px 15px; font-weight:bold; width:50px; text-align:center;
+}
+.searchPinNone{
+	display:none; font-size:12pt; color:#8c2130; margin-top:0px; margin-bottom:10px; font-weight:bold;	 
+}	
+.queryParNone{
+	display:none; font-size:12pt; color:#8c2130; margin-top:0px; margin-bottom:10px; font-weight:bold; text-align:center;	 
+}	
+.ffSelInstr{ 
+	margin-bottom:6px;	
+}	
+.qpWrapper{
+	width:100%; margin:5px 10px 10px 0px; display:inline-block; display:none; 
+}
+.infoTextBig{
+	font-size:14pt; color:#21658c; font-weight:bold; 
+}
+.infoTextBigger{
+	font-size:16pt; color:#21658c; font-weight:bold; margin-bottom:4px; 
+}
+.infoTextInline{
+	font-size:11pt; color:#21658c; display:inline-block;
+}
+.infoTextHeader{
+	font-size:12pt; color:#21658c; font-weight:bold; 
+}
+.queryHeader1{
+	font-size:12pt; color:#21658c; font-weight:bold; height:40px; text-align:center;
+}
+.queryHeader2{
+	font-size:12pt; color:#21658c; font-weight:bold; text-align:center; margin-left: 57px;
+}
+.infoText{
+	font-size:11pt; color:#21658c; margin-top:3px; overflow:hidden; padding:1px;
+}
+.infoTextIn{
+	font-size:11pt; color:#21658c; margin-top:3px; overflow:hidden; padding:1px; margin-left:8px; height:35px;
+}
+.futureZoom{
+	font-size:11pt; color:#21658c; overflow:hidden; padding:1px; float:right; clear:both; max-width:170px; text-align:right;
+}	
+.parcelInfo{
+	margin:0px 46px 10px 46px; padding:10px 10px 6px 10px; display:none;
+}	
+.pInfoField{
+	float:right; clear:both; font-size:11pt; color:#21658c; max-width:170px; text-align:right;
+}	
+.pifb{
+	font-size:18pt; color:#21658c; font-weight:bold;
+}	
+.fParSelWrapper{
+	display:none;	
+}	
+.futDataWrapper label{
+	font-size:11pt; color:#21658c; display:inline-block;
+}
+.toggleQuery{
+	color:blue; margin: 0 auto; margin-top:-2px; margin-bottom:5px; font-weight:bold; width:100px;
+}	
+.toggleFutSort{
+	color:blue; font-weight:bold; display:inline-block; position:relative; margin-top:6px; margin-left:5px; top:2px;
+}	
+.toggleQuery:hover, .toggleFutSort:hover{
+	cursor:pointer; color:#7FB0F0; 	
+}	
+.toggleQuery:active, .toggleFutSort:active{
+	color:blue;	
+}	
+.inputText label{
+	display:inline-block; 
+}	
+.inputText input[type="text"]{
+	box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.6) inset; border:1px solid #bbb; background-color:#fff; width:100px; 
+	height:28px; margin-left:5px; display:inline-block;
+}
+.inputTextQ input[type="text"]{
+	box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.6) inset; border:1px solid #bbb; background-color:#fff; width:70px; 
+	height:28px; margin-left:5px; display:inline-block;
+}
+.hrLine{
+	background-color: #4a96de; 	height:1px; border:0; margin:0px 5px 10px 5px;
+	background-image: -webkit-linear-gradient(left, #ccc, #4a96de, #ccc); background-image: -moz-linear-gradient(left, #ccc, #4a96de, #ccc);
+	background-image: -ms-linear-gradient(left, #ccc, #4a96de, #ccc); background-image: -o-linear-gradient(left, #ccc, #4a96de, #ccc);
+}
+.hrLineSm{
+	background-color: #4a96de; 	height:1px; border:0; margin:5px 0px ;
+	background-image: -webkit-linear-gradient(left, #ccc, #4a96de, #ccc); background-image: -moz-linear-gradient(left, #ccc, #4a96de, #ccc);
+	background-image: -ms-linear-gradient(left, #ccc, #4a96de, #ccc); background-image: -o-linear-gradient(left, #ccc, #4a96de, #ccc);
+}	
+.navBtn{
+	padding:5px 5px; text-decoration:none; -moz-border-radius:1px; -webkit-border-radius:1px; border-radius:1px; -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.5); box-shadow: 0 1px 2px rgba(0,0,0,0.5); border-bottom: 1px solid rgba(0,0,0,0.25); outline:none; position:relative; 
+	font-size: 12pt; margin:5px; background-color: #7FB0F0; color: #FFF; text-shadow:0 -1px 1px rgba(0,0,0,0.25); font-weight:100; text-align:center;
+}
+.navBtnSel{
+	-moz-border-radius:1px; -webkit-border-radius:1px; border-radius:1px; border-bottom: 1px solid rgba(0,0,0,0.25); outline:none; position:relative; 
+	margin:5px; background-color:#c3daf8; color: #555; text-shadow:0 1px 1px rgba(0,0,0,0.25); font-weight:100; text-align:center;
+	box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5); 
+}
+.navBtn:hover{
+	background-color: #29658C; cursor:pointer; color: #FFF;
+}
+.navBtn:active{
+	box-shadow: 1px 0px 3px rgba(0,0,0,0.5); text-shadow: 0 1px 1px rgba(0,0,0,0.25); background-color: #c3daf8;
+}
+.navBtnSel:hover{
+	background-color:#c3daf8; cursor:default; color:#555;
+}
+.bbar{
+	width:156px; display:inline-block;
+}
+.bbarGrLsTh{
+	width:20px; display:inline-block;
+}
+.bbarAndOr{
+	width:36px; display:inline-block;
+}
+.bbarAcrTax{
+	width:50px; display:inline-block; padding-top:3px; padding-bottom:3px;
+}
+.bbarAcDe{
+	width:74px; display:inline-block; padding-top:3px; padding-bottom:3px;
+}	
+.bbarL{
+	border-right: 1px solid gray; border-left: 1px solid gray; 
+}
+.bbarR{
+	margin-left:-10px; border-left: 1px solid gray; border-right: 1px solid gray;
+}
+.futQueryWrapper{
+	display:inline-block;	
+}	
+.futSortWrapper{
+	display:none; margin-bottom:8px; margin-top:3px;	
+}
+.printAnchorDiv{
+	width:230px; margin:auto; margin-top:10px; 
+}	
+.pinPDFdiv{
+	margin-top:0px; font-size:12pt; font-weight:bold; padding:5px; 
+}	
+.zoomSelected{
+	box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.6) inset; border: 1px solid #bbb; background-color:#fff;
+}
+	
+.pinPDFLinks, .pinZoomLinks{
+	font-size:11pt; font-weight:bold; color:blue !important;
+} 	
+.pinPDFLinks:hover, .pinZoomLinks:hover{
+	color:#7FB0F0 !important; cursor:pointer;
+}
+.hasParcelsDiv{
+	font-weight:bold; margin-top:5px; margin-bottom:10px; text-align:center; font-size:12pt; color:#21658c; 
+}	
+.noParcelsDiv{
+	font-weight:bold; margin-top:5px; margin-bottom:10px; text-align:center; font-size:12pt; color:#8c2130; display:none;
+}
+.selectDivs{
+	margin-bottom:-5px; margin-left:5px; margin-top:5px; 
+}
+.fakeAccordHeader{
+	background-color:#7FB0F0; color:#fff; background-image:none; text-align:left; z-index:20; position:relative;
+	text-shadow:0 -1px 1px rgba(0,0,0,0.25); font-weight:bold; font-size:12pt; padding:5px 30px;
+}
+.selectDivs1{
+	margin-left:0px; margin-top:-1px; padding-bottom:5px; padding-top:10px; 
+}
+.accrodBg{
+	background-color:#fbfbfb !important;	
+}
+.accrodBg.waiting * {
+    cursor: progress;
+}	
+.bottomRightSm{
+	border:1px solid #21658c; -webkit-box-shadow:1px 1px 5px 0px rgba(102,102,102,0.7) !important;	-moz-box-shadow:1px 1px 5px 0px rgba(102,102,102,0.7) !important;
+	box-shadow:1px 1px 5px 0px rgba(102,102,102,0.7) !important;
+}
+.dlAccord, .parAccord{
+	margin-top:0px;	
+}	
+.ui-accordion .ui-accordion-content{
+	padding:10px;
+	background-color:#f7f8ef;
+	background-image:none;
+}
+.dlAccord .ui-accordion-content{
+	padding:3px; background-color:#fff; background-image:none; border-left: 1px solid #21658c; border-top: none; border-right: 1px solid #21658c; border-bottom: 1px solid #21658c;
+	-webkit-box-shadow:1px 1px 5px 0px rgba(102,102,102,0.7) !important;	-moz-box-shadow:1px 1px 5px 0px rgba(102,102,102,0.7) !important;
+	box-shadow:1px 1px 5px 0px rgba(102,102,102,0.7) !important;
+}
+.dlAccord1 .ui-accordion-content{
+	padding:3px; background-color:#fff; background-image:none; border-left: 1px solid #09743E; border-top: none; border-right: 1px solid #09743E; border-bottom: 1px solid #09743E;
+	-webkit-box-shadow:1px 1px 5px 0px rgba(102,102,102,0.7) !important;	-moz-box-shadow:1px 1px 5px 0px rgba(102,102,102,0.7) !important;
+	box-shadow:1px 1px 5px 0px rgba(102,102,102,0.7) !important;
+}
+.parAccord .ui-accordion-content{
+	padding:3px; background-image:none; border-left: 1px solid #21658c; border-top: none; border-right: 1px solid #21658c; border-bottom: 1px solid #21658c;
+	-webkit-box-shadow:1px 1px 5px 0px rgba(102,102,102,0.7) !important;	-moz-box-shadow:1px 1px 5px 0px rgba(102,102,102,0.7) !important;
+	box-shadow:1px 1px 5px 0px rgba(102,102,102,0.7) !important;
+}
+.ui-accordion .ui-accordion-header{
+	background-color:#7FB0F0; color:#fff; background-image:none; margin-top:5px;
+	text-shadow:0 -1px 1px rgba(0,0,0,0.25); font-weight:bold; font-size:12pt; padding:5px 30px;
+}
+.ui-accordion .ui-accordion-header:hover{
+	background-color:#29658C;
+	background-image:none;
+}	
+.ui-accordion .ui-accordion-header .ui-state-focus{
+	color:red;
+}
+.downloadDiv{
+	padding:5px;
+}		
+.bulHead{
+	font-size:9pt; 
+}
+.bulList{
+	margin-left:2px; margin-top:5px; font-size:9pt; 
+}	
+.bulList a, .infoText a, .futureZoom{
+	color:blue;	font-weight:bold;
+}
+.bulList a:hover, .infoText a:hover, .futureZoom:hover{
+	color:#7FB0F0; cursor:pointer; 
+}	
+.sumHr{
+	margin-bottom:15px !important; margin-top:45px !important;
+}
+.sum2Hr{
+	margin-top:15px; margin-bottom:15px;	
+}	
+.borderDiv{
+	position:absolute; top:45px; left:0px; width:100%; height:1px; background-color:#fff; border-bottom:2px solid #666; -webkit-box-shadow:1px 1px 2px 0px rgba(102,102,102,0.7); 
+	-moz-box-shadow:1px 1px 2px 0px rgba(102,102,102,0.7); box-shadow:1px 1px 2px 0px rgba(102,102,102,0.7); z-index:10;
+}
+/* Dropshadows */
+.bottomRight{
+	-webkit-box-shadow:2px 2px 3px 0px rgba(102,102,102,0.7); -moz-box-shadow:2px 2px 3px 0px rgba(102,102,102,0.7); box-shadow:2px 2px 3px 0px rgba(102,102,102,0.7);
+}
+.bottomRight1{
+	-webkit-box-shadow:1px 1px 2px 0px rgba(102,102,102,0.7); -moz-box-shadow:1px 1px 2px 0px rgba(102,102,102,0.7); box-shadow:1px 1px 2px 0px rgba(102,102,102,0.7);
+}
+/* Headers */
+.sectionHeader{
+	font-weight:bold; margin-top:5px;
+}
+.sectionHeaderS2{
+	font-weight:bold; color:#21658c; margin-top:5px; margin-bottom:8px;
+}
+
+.sectionHeader1{
+	font-size:11pt !important; color:#21658c; cursor: default; margin-bottom:0px; margin-top:5px;
+}
+.sectionHeader2{
+	color:#21658c; cursor: pointer; margin-top: 3px;
+}	
+/* Tax District Data */
+.s2Atts{
+	font-weight:bold;
+} 	
+/* Summary Parcel Toggles */
+.parView, .sumView{
+	color:blue; cursor:pointer;
+}
+.sumView, .parText, .filterDiv, .nfos, .ceos{
+	display:none;
+}
+.hideDivs{
+	display:none;
+}	
+.viewClick{
+	display:inline-block;	
+}
+.filterInline{
+	display:inline-block;	
+}	
+/*input[type="text"]{
+	width:95px !important; height:25px !important; padding:3px !important; margin:0px 5px 5px 0px !important;
+	font-family: 'Archivo Narrow', 'Arial Narrow', Arial, Helvetica, sans-serif !important; font-size:11pt !important;
+	box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.6) inset;
+}*/
+.parcelAcresIn::-webkit-input-placeholder { font-size:10pt; }
+.parcelAcresIn::-moz-placeholder { font-size:10pt; } /* firefox 19+ */
+.parcelAcresIn:-ms-input-placeholder { font-size:10pt; } /* ie */
+.parcelAcresIn input:-moz-placeholder { font-size:10pt; }
+.parcelAcresDiv{
+	float:right; width:100px; margin-bottom:-3px; margin-left:3px; display:none;
+}	
+.acreText{
+	font-size:10pt; color:red; float:right; margin-top:14px; font-weight:bold; margin-left:12px; display:none;
+}	
+/* expand collapse icons */
+.gExp, .gCol{
+	cursor:pointer; 	
+}
+.gCol{
+	display:none;	
+}	
+.expCol{
+	margin-right:3px !important; float:left;
+}	
+.lyrExpCol{
+	margin-left:1px !important; display:inline-block;
+}	
+.sumHeader{
+	display:inline-block; font-size:8pt;
+}	
+/* Chosen select menu elements */
+.chosen-container-single .chosen-single{
+	padding: 0 0 0 4px; font-weight:bold; font-size:12pt;
+}
+.chosen-container-single .chosen-default, .chosen-container-multi .chosen-choices li.search-field input[type="text"]{
+	color:#444;
+}	
+.chosen-container-single .chosen-single abbr{
+	right:16px;
+}	
+.chosen-container-single .chosen-single span{
+	margin-right:20px;
+}
+.chosen-container-single .chosen-single-with-deselect span{
+	margin-right:20px;
+}
+.chosen-container ul.chosen-results li.highlighted {
+  background-color: #29658C; background-image: none; color:#fff; font-size:12pt; text-shadow:0 -1px 1px rgba(0,0,0,0.25); font-weight:100;
+}
+.active-result{
+	font-size:12pt; 
+}	
+/*.chosen-container .chosen-results {
+    max-height:100px !important;
+}*/
+abbr.search-choice-close {
+  cursor: pointer;
+}
+/* Checkbox and labels */
+.crsCb{
+	cursor:pointer;
+}
+.checkBoxLabels{
+	margin-left:0px; display:inline-block; font-size:8pt;
+}
+label.checkBoxLabels input[type=checkbox]{
+	position: relative; vertical-align: middle; bottom: 1px; margin-right:3px;
+}
+/* Info icons */
+.infoOpen{
+	cursor:pointer; margin-left:4px; margin-bottom:-3px; display:none; font-size:8pt;
+}
+.infoA{
+	color:blue !important;	font-weight:bold;
+}
+.infoA:hover{
+	color:#7FB0F0 !important; cursor:pointer; 
+}
+/* Parcel checkbox rows */
+.smallLegends{
+	margin-bottom:-5px; margin-left:-5px; height:20px; width:20px;
+}	
+.smIndent{
+	margin-left:-5px;	
+}	
+.smIndent1{
+	margin-left:5px;	
+}	
+/* Indents */
+.firstIndent{
+	margin-left:5px;
+	margin-top:8px;	
+}
+.secondIndent1{
+	margin-top:4px;
+	margin-left:15px;
+	margin-bottom:0px;
+}
+.labelIndent{
+	margin-left:18px;
+}	
+.secondIndent{
+	margin-top:4px;
+	margin-left:19px;
+	margin-bottom:6px;
+}
+.secondIndent2{
+	margin-top:4px;
+	margin-left:5px;
+	margin-bottom:6px;
+}
+.thirdIndent{
+	margin-top:5px;
+	margin-left:25px;	
+}
+/* Hide elements before Open Space Parcel Eligible is clicked */
+.step0, .step1, .step2, .step3{
+	display:none;
+}	
+.step1, .step2, .step3, .printWrapper{
+	position:relative; top:45px;
+}
+	
+/* Bottom Bar Elements */
+.bottomDiv{
+	position:absolute; bottom:0px; left:0px; width:100%; border-top-style:groove !important; height:30px !important; 
+	background-color:#F3F3F3 !important; padding-top:3px !important; display:none;
+}
+.sliderDiv{
+	width:252px; margin:0 auto; text-align:center; 
+}
+.printReport{
+	margin-left:5px; display:inline-block; display:none;
+}
+.dlCSV{
+	float:right; margin-right:5px; display:none;
+}
+.bottomLinks:hover{
+	background-color:#eee; border:1px solid #bbb; cursor:pointer;
+}
+.bottomLinks:active{
+	background-color:#f3f3f3; border:1px solid #bbb; cursor:pointer;
+}
+.bottomLinks{
+	width:70px; height:20px; padding-top:2px; border:1px solid #ddd; background-color:#eee; text-align:center; font-size:10pt; color:#21658c; font-weight:bold;
+}
+.leftSliderLabel{
+	display:inline-block; margin-right:9px; font-size:10pt;
+}	
+.slider{
+	width:100px; display:inline-block;
+}
+.ui-slider-horizontal { 
+	height: 5px; 
+}
+.ui-slider-horizontal .ui-slider-handle { 
+	height:15px; width:15px; margin-top:-1px; 
+}
+.rightSliderLabel{
+	display:inline-block; margin-left:5px; font-size:10pt;
+}
+/* Clear Tax District Clicks */
+.clearTD{
+	cursor:pointer; color:blue;	
+}
+.clearTD:active{
+	color:#21658c;
+}	
+/* Popup Legend Elements */
+.myLegendHeader{
+	background-color:#424542; color:#fff; height:28px; font-size:1em; font-weight:bold; padding:8px 0px 0px 10px; cursor:move;
+}
+.myLegendCloser{
+	float:right !important; width:26px; height:26px; border-left:1px solid #666; text-align:center; font-weight:bold; padding:6px !important; right:-8px; color:#cecfce; border-radius:5px;
+}
+.myLegendCloser:hover{
+	background-color:#000; color:#cecfce;
+}
+.myLegendCloser:active{
+	background-color:#545754; border-right:1px solid #666; border-left:none; 
+}	
+.myLegendDiv{
+	width:180px; height:100%;
+}
+.mySpeciesLegend{
+	display:block; text-align:right; margin-left:-10px; padding:10px !important;
+}
+.barWrapper {
+	width: 346px; height: 25px; position: relative; left:6px; margin-bottom:4px; background-color:#333; float:left;	
+	/*-moz-box-shadow: 2px 2px 3px #999; -webkit-box-shadow: 2px 2px 3px #999; box-shadow: 2px 2px 3px #999;*/
+} 
+.bars{
+	position: absolute; display: block; width: 342px; height: 20px; border: 0; left: 0px; bottom: 0%; float:left; color:black; 
+	-moz-box-shadow: inset 1px 2px 2px rgba(255, 255, 255, .4), inset -1px -1px 2px rgba(0, 0, 0, .4);
+	-webkit-box-shadow: inset 1px 2px 2px rgba(255, 255, 255, .4), inset -1px -1px 2px rgba(0, 0, 0, .4);
+	box-shadow: inset 1px 2px 2px rgba(255, 255, 255, .4), inset -1px -1px 2px rgba(0, 0, 0, .4);
+}
+.spanBar{
+	top:2px; left:2px; overflow:hidden; text-indent:-30px;
+}
+.emBar{
+	border-top:1px solid #424542; border-right:1px solid #424542;
+}
+.barLabel{
+	position:relative; z-index:2; left:2px; top:-1px; font-size:8pt; 
+}
+.bar3{
+	background: repeating-linear-gradient(45deg, #ecefde, #ecefde 5px, #ccc 5px, #ccc 10px);
+}
+.barf{
+	background-color:#408cb4;
+}	
+.bar2{
+	background-color:#8fb440;
+}
+.bar1{
+	background-color:#c8841d;
+}
+.topPad{
+	margin-top:11px;
+}	
+.topLabel{
+	margin-left:5px; margin-bottom:-5px; 
+}
+.bottomLabel{
+	margin-left:2px; display:none;
+}
+.graphWrapper{
+	padding-bottom:5px !important; padding-top:10px !important; 	
+}	
+.barNumWarpper{
+	height:48px !important;
+}	
+.graphHeader{
+	font-weight: bold; margin-top: 5px; margin-bottom:5px;
+}	
+.graphLegLbl{
+	display:inline-block; margin-top:3px; margin-left:3px; font-size:8pt;
+}
+.futureGraph{
+	display:none; height: 17px;
+}	
+.graphLegend{
+	height: 17px; width:28px; display:inline-block;
+	-moz-box-shadow: inset 1px 2px 2px rgba(255, 255, 255, .4), inset -1px -1px 2px rgba(0, 0, 0, .4);
+	-webkit-box-shadow: inset 1px 2px 2px rgba(255, 255, 255, .4), inset -1px -1px 2px rgba(0, 0, 0, .4);
+	box-shadow: inset 1px 2px 2px rgba(255, 255, 255, .4), inset -1px -1px 2px rgba(0, 0, 0, .4);
+}	
+.bar2a{
+	margin-left:7px;
+}
+.barfa{
+	margin-left:7px;
+}	
+.grLgDiv{
+	height:20px; width:100%; display:inline-block; text-align:center;
+}	
+.longLegDiv{
+	margin-bottom:2px; display:none;
+}	
+.selectParcels{
+	margin-top:5px; cursor:pointer;	color:blue;
+}	
+.hideParcels, .undoRemove{
+	margin-top:5px; cursor:pointer;	color:blue; display:none;
+}	
+.dijitTooltipContainer{
+	background: #fff !important; padding:3px; width:225px; 
+}	
+.myTooltip{
+	font-size:10pt !important;
+}	
+.closePup{
+	float:right; margin-right:3px; font-weight:bold; color:blue; cursor:pointer;	
+}
+.removeParcel{
+	color:#a11226; margin-left:44px; cursor:pointer;
+}	
+.removeParcel:hover{
+	color:#e51a37;
+}	
+.puHr{
+	margin-bottom:3px !important; margin-top:3px !important;
+}
+/* Hidden Print Table Styles */
+.pt {
+	display:none; 		
+}		
+.printTable {
+	font-family: 'Archivo Narrow', 'Arial Narrow', Arial, Helvetica, sans-serif !important; font-size: 10pt !important; table-width:fixed; 
+	background-color: #fff; text-align: left; border-spacing: 0; border: #777 1px solid; width:1000px; margin-left:30px;
+}
+.printTable th,
+.printTable td {
+	font-family: 'Archivo Narrow', 'Arial Narrow', Arial, Helvetica, sans-serif !important; font-size: 14pt !important; border: #777 1px solid; padding: 2px 3px;
+}
+.printTable .filtered {
+	display: none !important; 
+}
+.printTable .filtered2 {
+	display: none !important; 
+}		
+.psHead{
+	font-weight:bold;	
+}	
+.psIn{
+	margin-left:10px;
+} 	
+.psTop{
+	text-decoration:underline;
+}	
+.summary{
+	font-size:18pt !important;
+}	
+#tableWrapper {
+	position: absolute; top:640px; width:100%; visibility: visible;
+}
+#tableTitle{
+	text-align:center; width:1400px; margin-bottom:5px; font-size:24pt !important; visibility: visible;
+}
+#summary {
+	margin-left:640px; margin-top:40px; visibility: visible;
+}	
+#title {
+	text-align:center; width:1400px; font-size:24pt !important; visibility: visible;
+}
+.popover-header{
+	height:40px !important; padding:12px !important;
+}
+#print-preview-print{
+	position:absolute; right:23px; top:60px; z-index:100; 
+}	
+.instructions{
+	position:absolute; width:410px; margin-left:-205px; left:50%; top:60px; z-index:100; font-weight:bold; font-size: 16px; color: #ffffff; 
+	text-transform: uppercase; background:rgba(38,100,142,0.7); line-height:1;	
+	-webkit-box-shadow:1px 1px 2px 0px rgba(102,102,102,0.7); -moz-box-shadow:1px 1px 2px 0px rgba(102,102,102,0.7); box-shadow:1px 1px 2px 0px rgba(102,102,102,0.7);
+}	
+.print-preview-container{
+	padding:0px !important; 
+}	
+.tbox{
+	top:100px !important;	
+}	
+	
