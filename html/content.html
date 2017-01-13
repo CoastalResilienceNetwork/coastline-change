@@ -1,0 +1,248 @@
+﻿<!--This HTML is used in the render function to build the elements within the plugin. The render function first creats a
+Dijit ContentPane to hold all the elements. The ContentPane is assigned a dynamic id upon creation. The render function
+takes the ContentPane id and prepends it to every element with a declared id in this HTML before the elements are created.
+The unique ContentPane id makes all the element ids unique and prevents duplicate id errors in split screen mode.-->
+
+<!--Opening view of the app. Give a little background and instructions to get started-->
+<div class='topLineWrap'>
+	<div class='togBtn togBtnBig' id='historicalBtn'> View Historical Data </div>
+	<div class='togBtn togBtnBig' id='futureBtn'> View Future Scenarios</div>
+</div>
+<div class='historicalWrapper' id='historicalWrapper'>
+	<!-- <div class='lineWrapCenter1 helpLink'>
+		<div id='moreInfoH' class='moreInfo helpLink1'><span>Learn More</span><span style='display:none; color:#8c2130;'>Hide Explanations</span></div>
+		<a class='pdfLink helpLink2' href='plugins/coastline-change/assets/Historical_PDF.pdf' target='_blank'>Explain Historical Data</a>
+	</div> -->
+	<div class='lineWrapCenter1 helpLink'>
+		<div id='moreInfoH' class='moreInfo helpLink1'><span>Explain Each Choice</span><span style='display:none; color:#8c2130;'>Hide Explanations</span></div>
+		<div class='helpLink2'><a class='pdfLink' href='plugins/coastline-change/assets/Historical_PDF.pdf' target='_blank'>Learn More</a></div>
+	</div>
+	<div class='lineWrap'>
+		<div class='lineHeader1'>1. Select Island (or Click Map):</div>
+		<div class='selectWrapper'>
+			<select id='ch-ISL' data-placeholder="Select Island" class="chosen-islands" tabindex="16">
+				<option value=""></option>
+				<option value="EasternShore" selected>Virginia Eastern Shore</option>
+				<option value="Assateague">Assateague Island</option>
+				<option value="Wallops">Wallops Island</option>
+				<option value="Assawoman">Assawoman Island</option>
+				<option value="Metompkin">Metompkin Island</option>
+				<option value="Cedar">Cedar Island</option>
+				<option value="Parramore">Parramore Island</option>
+				<option value="Hog">Hog Island</option>
+				<option value="Cobb">Cobb Island</option>
+				<option value="Wreck">Wreck Island</option>				
+				<option value="Ship Shoal">Ship Shoal Island</option>
+				<option value="Myrtle">Myrtle Island</option>
+				<option value="Smith">Smith Island</option>
+				<option value="Fishermans">Fishermans Island</option>
+			</select>
+		</div>
+		<div class='historicInfo explanations'>Selecting an island from the list will zoom the map to that island. Scroll the mouse wheel up or use the + button on the left to zoom in further. For the larger islands, further zooming may be required to see details in the data and to view more recent aerial imagery.</div>
+	</div>
+	
+	<div class='lineWrap'>
+		<div class='lineHeader1'>2. Select Data Type:</div>
+		<div class='togBtn' id='hisShoreBtn'>Historic Shorelines</div>
+		<div class='togBtn' id='chRateBtn'>Change Rate</div>
+		<div class='historicInfo explanations'>Historic Shorelines will show mapped historic shoreline position for selected dates between 1851 and 2014. Change Rate will show rates of change calculated from all available historic shoreline position data. Upon zooming in, these rates of change are shown with transects spaced 50 meters apart and approximately perpendicular to the shoreline.</div>
+	</div>
+	<div class='lineWrap termWrapper' id='termWrapper'>
+		<div class='lineHeader1'>3. Show Change Rate Type:</div>
+		<div class='togBtn  togBtnSel' id='longBtn'>Long term</div>
+		<div class='togBtn ' id='shortBtn'> Short term</div>
+		<div class='historicInfo explanations'>Shoreline change was measured at transects spaced 50 meters apart and approximately perpendicular to the shoreline. Long term rates of change are based on an analysis of all historic shorelines from the earliest to most recent dates present. Sometimes a change in the long term trend is observed. Where this is the case, a short term rate of change has been calculated from the time the change occurred to the most recent date.</div>
+	</div>
+	<div class='lineWrap historicalShoreWrapper' id='historicalShoreWrapper'>
+		<div class='lineHeader1'>3. Display Historic Shorelines:</div>
+		<div class='togBtn togBtnSel' id='sliderBtn'>Slider</div>
+		<div class='togBtn' id='multiBtn'>Multiple</div>
+		<div class='historicInfo explanations'>Historic shorelines can be shown one at a time by manually clicking or animating a slider (with the Play button), or multiple shorelines can be shown on the map at the same time.</div>
+	</div>
+	<hr class='hrStyle'>
+	<div class='chartWrapper'id='chartWrapper'>
+		<div class='largeHeader' id='chartTitle'>Virginia Eastern Shore – Long Term Change</div>
+		<div class='graphWrapper'>
+			<div class='barNumWarpper'>
+				<div class='topLabel'>
+					<img src='plugins/coastline-change/images/topLabelPercent.png' alt='class labels'>
+				</div>
+				<div class='barWrapper'>
+					<span class='bars spanBar bar3' id='bar3'>
+						<span class='bars emBar barf' id='barf'></span>
+						<span class='bars emBar bar1' id='bar1'></span>
+						<span class='bars emBar bar2' id='bar2'></span>
+					</span>
+				</div>
+			</div>
+
+		</div>
+		<div class='grLgDiv'>
+			<!--<div class='bar1 graphLegend'><span id='bar1L' class='barLabel'></span></div><div class='graphLegLbl'>Seaward Movement</div>
+			<div class='bar2 bar2a graphLegend'><span id='bar2L' class='barLabel'></span></div><div class='graphLegLbl'>Landward Movement</div>-->
+			<div class='bar2b'><span id='bar1L' style='font-weight:bold;'></span> Seaward Movement</div>
+			<div class='bar2a'><span id='bar2L' style='font-weight:bold;'></span> Landward Movement</div>
+		</div>
+		<div class='smallHeader'>Placeholder to illustrate transect lengths</div>
+		<hr class='hrStyle'>
+		<div class='medHeader'>Zoom in to Select/Click on Individual Transects</div>
+		<div class='lineWrap transectWrap' id='transectWrap'>
+			<div class='medSmHeader'>Selected Transect:</div>
+			<div id='longWrap' class='longWrap'>
+				<div class='lineHeader3a'>Long Term Change Rate: <span class='tsect' id='-LRrate'></span> <span>m/yr</span></div>
+				<div class='lineHeader3a'>Long Term Date Range: <span class='tsect' id='-xmin'></span> <span>to</span> <span class='tsect' id='a-xmax'></span></div>
+				<div class='lineHeader3a'># Positions for Long Term Rate: <span class='tsect' id='-N'></span></div>
+			</div>
+			<div id='shortWrap' class='shortWrap'>
+				<div class='lineHeader3a'>Short Term Change Rate: <span class='tsect' id='-zc2'></span> <span>m/yr</span></div>
+				<div class='lineHeader3a'>Short Term Date Range: <span class='tsect' id='-cpx'></span> <span>to</span> <span class='tsect' id='b-xmax'></span></div>
+				<div class='lineHeader3a'># Positions for Short Term Rate: <span class='tsect' id='-ip'></span></div>
+			</div>
+		</div>
+	</div>
+	<div class='multiShoreLine' id='multiShoreLine'>
+		<div class='lineWrapCenter' id='singleShore'>
+			<div class='sectionHeader'>Select Shoreline Year</div>
+			<div class='navSpacer'></div>
+			<div class='multiShoreSlider' id='multiShoreSlider'></div>
+			<div class='navSpacer1'></div>
+			<div class='togBtn' id='sliderPlay'>Play</div>
+			<div class='togBtn hide' id='sliderStop'>Stop</div>
+		</div>
+		<div class='multiShoreCheck lineWrapCenter' id='multiShoreCheck'>
+			<div class='sectionHeader'>Select Multiple Shoreline's</div>
+			<div id='ch-yearCheck' class='ch-yearCheck'>
+				<div class='yearCbWrap'><input type='checkbox' id='ch-1850s' class='yearCb' value='1850s'><label class='yearCbLabel'>1850s</label></div>
+				<div class='yearCbWrap'><input type='checkbox' id='ch-1910s' class='yearCb' value='1910s'><label class='yearCbLabel'>1910s</label></div>
+				<div class='yearCbWrap'><input type='checkbox' id='ch-1940s' class='yearCb' value='1940s'><label class='yearCbLabel'>1940s</label></div>
+				<div class='yearCbWrap'><input type='checkbox' id='ch-1962' class='yearCb' value='1962'><label class='yearCbLabel'>1962</label></div>
+				<div class='yearCbWrap'><input type='checkbox' id='ch-1970s' class='yearCb' value='1970s'><label class='yearCbLabel'>1970s</label></div>
+				<div class='yearCbWrap'><input type='checkbox' id='ch-1985-6' class='yearCb' value='1985-6'><label class='yearCbLabel'>1985-6</label></div>
+				<div class='yearCbWrap'><input type='checkbox' id='ch-1994' class='yearCb' value='1994'><label class='yearCbLabel'>1994</label></div>
+				<div class='yearCbWrap'><input type='checkbox' id='ch-2002' class='yearCb' value='2002'><label class='yearCbLabel'>2002</label></div>
+				<div class='yearCbWrap'><input type='checkbox' id='ch-2004' class='yearCb' value='2004'><label class='yearCbLabel'>2004</label></div>
+				<div class='yearCbWrap'><input type='checkbox' id='ch-2006' class='yearCb' value='2006'><label class='yearCbLabel'>2006</label></div>
+				<div class='yearCbWrap'><input type='checkbox' id='ch-2009' class='yearCb' value='2009'><label class='yearCbLabel'>2009</label></div>
+				<div class='yearCbWrap'><input type='checkbox' id='ch-2011' class='yearCb' value='2011'><label class='yearCbLabel'>2011</label></div>
+				<div class='yearCbWrap'><input type='checkbox' id='ch-2013' class='yearCb' value='2013'><label class='yearCbLabel'>2013</label></div>
+				<div class='yearCbWrap'><input type='checkbox' id='ch-2014' class='yearCb' value='2014'><label class='yearCbLabel'>2014</label></div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class='futureWrapper' id='futureWrapper'>
+	<div id='futButtonWrapper' class='futButtonWrapper'>
+		<div class='lineWrapCenter1 helpLink'>
+			<div id='moreInfoF' class='moreInfo helpLink1'><span>Explain Each Choice</span><span style='display:none; color: #8c2130;'>Hide Explanations</span></div>
+			<div class='helpLink2'><a class='pdfLink' href='plugins/coastline-change/assets/Future_Scenario_PDF.pdf' target='_blank'>Learn More</a>
+			</div>
+		</div>
+		<div class='lineWrap' id='riseWrapper'>
+			<div class='lineHeader2'>1. Choose a Sea Level Rise Scenario:</div>
+			<div class='togBtnWrap'>
+				<div class='togBtn' id='-btn0_low'>Low</div>
+				<div class='togBtn' id='-btn0-hi'>High</div>
+				<div class='togBtn' id='-btn0-hst'>Highest</div>
+			</div>
+			<div class='futureInfo explanations'>Sea-level rise scenarios are based on the customization for Virginia, developed by the Virginia Institute of Marine Science, of the 2012 National Climate Assessment. The High scenario is currently seen by scientists as the most likely scenario.</div>
+		</div>
+		<div class='lineWrap termWrapper' id='waveWrapper'>
+			<div class='lineHeader2'>2. Choose Wave Climate Change Scenario:</div>
+			<div class='togBtnWrap'>
+				<div class='togBtn' id='-btn1-none'>None</div>
+				<div class='togBtn' id='-btn1-P15'>Greater NE</div>
+				<div class='togBtn' id='-btn1-M15'>Lesser NE</div>
+			</div>
+			<div class='futureInfo explanations'>In a changing climate, the influence of waves approaching from different directions may also change. These options represent modeled changes to the present wave climate that involve either a greater or lesser proportion of wave influence approaching from the northeast.</div>
+		</div>
+		<div class='lineWrap' id='nourWrapper'>
+			<div class='lineHeader2'>3. Choose Nourishment Scenario:</div>
+			<div class='togBtnWrap'>
+				<div class='togBtn' id='-btn2-none'>None</div>
+				<div class='togBtn' id='-btn2-W'>Wallops</div>
+				<div class='togBtn' id='-btn2-A'>Assateague</div>
+				<div class='togBtn' id='-btn2-B'>Both</div>
+			</div>
+			<div class='futureInfo explanations'>Based on stakeholder input, two zones were identified as areas where beach nourishment may take place in the future. Beach nourishment was modeled only for those areas where it has been undertaken in the past (Wallops Island) or may be considered in the future (Assateague Island), but the modeled projections should in no way indicate an endorsement of any management option, either in those areas or elsewhere in the region.</div>
+		</div>
+		<div class='zdis' id='zdis'>Zooming is disabled<br>for Future Scenarios</div>
+	</div>
+	<hr class='hrStyle'>
+	<div class="barGraphWrap">
+		<div class="vertAndLines">
+			<!--<div class='vLabelLineWrap'>
+				<div class="vertLbl">100</div><div class="dashedLines"></div>
+			</div>-->
+			<div class='vLabelLineWrap'>
+				<div class="vertLbl">90</div><div class="dashedLines"></div>
+			</div>
+			<div class='vLabelLineWrap'>
+				<div class="vertLbl">80</div><div class="dashedLines"></div>
+			</div>
+			<div class='vLabelLineWrap'>
+				<div class="vertLbl">70</div><div class="dashedLines"></div>
+			</div>
+			<div class='vLabelLineWrap'>
+				<div class="vertLbl">60</div><div class="dashedLines"></div>
+			</div>
+			<div class='vLabelLineWrap'>
+				<div class="vertLbl">50</div><div class="dashedLines"></div>
+			</div>
+			<div class='vLabelLineWrap'>
+				<div class="vertLbl">40</div><div class="dashedLines"></div>
+			</div>
+			<div class='vLabelLineWrap'>
+				<div class="vertLbl">30</div><div class="dashedLines"></div>
+			</div>
+			<div class='vLabelLineWrap'>
+				<div class="vertLbl">20</div><div class="dashedLines"></div>
+			</div>
+			<div class='vLabelLineWrap'>
+				<div class="vertLbl">10</div><div class="dashedLines"></div>
+			</div>
+			<div class='vLabelLineWrap'>
+				<div class="vertLbl">0</div><div class="dashedLines"></div>
+			</div>
+		</div>
+		<div class="barHolder" id ='barHolder'>
+			<div class="sumBarsWrap">
+				<div class="sumBars"></div><div class="smallLabels">1<br>to<br>-1</div>
+			</div>
+			<div class="sumBarsWrap">
+				<div class="sumBars"></div><div class="smallLabels">-1<br>to<br>-3</div>
+			</div>
+			<div class="sumBarsWrap">
+				<div class="sumBars"></div><div class="smallLabels">-3<br>to<br>-5</div>
+			</div>
+			<div class="sumBarsWrap">
+				<div class="sumBars"></div><div class="smallLabels">-5<br>to<br>-7</div>
+			</div>
+			<div class="sumBarsWrap">
+				<div class="sumBars"></div><div class="smallLabels">-7<br>to<br>-9</div>
+			</div>
+			<div class="sumBarsWrap">
+				<div class="sumBars"></div><div class="smallLabels">-9<br>to<br>-11</div>
+			</div>
+			<div class="sumBarsWrap">
+				<div class="sumBars"></div><div class="smallLabels">More<br>than<br>-11</div>
+			</div>
+		</div>
+		<div class='xBarGraphLabel'>Rate of Change Difference (meters/year)<br>Negative numbers indicate more erosion or less accretion</div>
+		<div class='yBarGraphLabel'>Percent of Modeled Area</div>
+	</div>
+</div>
+
+
+<!--Bottom bar with slider and print/csv buttons-->
+<div id='bottomDiv' class='bottomDiv'>
+	<div id='sliderDiv' class='sliderDiv'>
+		<div class='leftSliderLabel'>
+			Opaque
+		</div>
+		<div id='slider' class='slider'>
+		</div>
+		<div class='rightSliderLabel'>
+			Transparent
+		</div>
+	</div>
+</div>
