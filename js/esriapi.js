@@ -10,12 +10,12 @@ function ( 	ArcGISDynamicMapServiceLayer, Extent, SpatialReference, Query, Query
 			esriApiFunctions: function(t){	
 				// Add dynamic map service
 				t.dynamicLayer = new ArcGISDynamicMapServiceLayer(t.url);
+				t.obj.visibleLayers = t.obj.historicLayers;				
+				if (t.obj.visibleLayers.length > 0){	
+					t.dynamicLayer.setVisibleLayers(t.obj.visibleLayers);
+				}
 				t.map.addLayer(t.dynamicLayer);
 				t.dynamicLayer.on("load", lang.hitch(t, function () { 
-					t.obj.visibleLayers = t.obj.historicLayers;				
-					if (t.obj.visibleLayers.length > 0){	
-						t.dynamicLayer.setVisibleLayers(t.obj.visibleLayers);
-					}
 					t.layersArray = t.dynamicLayer.layerInfos;
 					t.histExtent = t.map.extent;
 					t.navigation.setNavBtns(t);
