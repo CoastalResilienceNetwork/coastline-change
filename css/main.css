@@ -20,7 +20,7 @@ body.waiting * {
 	display:none;
 }	
 .multiShoreSlider{
-	width:340px; margin-left:20px;
+	margin-left:20px;
 }
 .multiShoreSlider label{
 	position: absolute; width: 54px; margin-left: -26px; text-align: left; margin-top: 30px; transform: rotate(90deg);
@@ -86,9 +86,7 @@ abbr.search-choice-close {
 .leftSliderLabel{
 	display:inline-block; margin-right:9px; 
 }
-.slider{
-	width:100px; display:inline-block;
-}
+
 
 .rightSliderLabel{
 	display:inline-block; margin-left:5px; 

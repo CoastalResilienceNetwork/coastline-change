@@ -18,23 +18,25 @@ The unique ContentPane id makes all the element ids unique and prevents duplicat
 		</div>
 		<h3>1. Select Island (or Click Map):</h3>
 		<div class="selectWrapper">
-			<select id="ch-ISL" data-placeholder="Select Island" class="chosen-islands" tabindex="16">
-				<option value=""></option>
-				<option value="EasternShore" selected>Virginia Eastern Shore</option>
-				<option value="Assateague">Assateague Island</option>
-				<option value="Wallops">Wallops Island</option>
-				<option value="Assawoman">Assawoman Island</option>
-				<option value="Metompkin">Metompkin Island</option>
-				<option value="Cedar">Cedar Island</option>
-				<option value="Parramore">Parramore Island</option>
-				<option value="Hog">Hog Island</option>
-				<option value="Cobb">Cobb Island</option>
-				<option value="Wreck">Wreck Island</option>				
-				<option value="Ship Shoal">Ship Shoal Island</option>
-				<option value="Myrtle">Myrtle Island</option>
-				<option value="Smith">Smith Island</option>
-				<option value="Fishermans">Fishermans Island</option>
-			</select>
+			<div class="chosen-wrap" style="margin-bottom:10px;">
+				<select id="ch-ISL" data-placeholder="Select Island" class="chosen chosen-islands" tabindex="16">
+					<option value=""></option>
+					<option value="EasternShore" selected>Virginia Eastern Shore</option>
+					<option value="Assateague">Assateague Island</option>
+					<option value="Wallops">Wallops Island</option>
+					<option value="Assawoman">Assawoman Island</option>
+					<option value="Metompkin">Metompkin Island</option>
+					<option value="Cedar">Cedar Island</option>
+					<option value="Parramore">Parramore Island</option>
+					<option value="Hog">Hog Island</option>
+					<option value="Cobb">Cobb Island</option>
+					<option value="Wreck">Wreck Island</option>				
+					<option value="Ship Shoal">Ship Shoal Island</option>
+					<option value="Myrtle">Myrtle Island</option>
+					<option value="Smith">Smith Island</option>
+					<option value="Fishermans">Fishermans Island</option>
+				</select>
+			</div>	
 		</div>
 		<div class="historicInfo explanations">Selecting an island from the list will zoom the map to that island. Scroll the mouse wheel up or use the + button on the right to zoom in further. For the larger islands, further zooming may be required to see details in the data and to view more recent aerial imagery.</div>
 		<h3>2. Select Data Type:</h3>
@@ -108,7 +110,9 @@ The unique ContentPane id makes all the element ids unique and prevents duplicat
 		<div id="singleShore">
 			<h3>Select Shoreline Year</h3>
 			<!--<div class="navSpacer"></div>-->
-			<div class="multiShoreSlider" id="multiShoreSlider"></div>
+			<div class="slider-container" style="width:340px;">
+				<div class="multiShoreSlider slider" id="multiShoreSlider"></div>
+			</div>
 			<div class="navSpacer1"></div>
 			<div class="toggle-btn" style="width:100px; margin:auto">  
 				<input type="radio" id="sliderPlay" name="sps"/> <label for="sliderPlay">Play</label>  
@@ -210,6 +214,7 @@ The unique ContentPane id makes all the element ids unique and prevents duplicat
 			<div class="toggle-btn" style="width:340px; margin:auto;">  
 				<input type="radio" id="-btn2-none" name="ns" value="None"/> <label for="-btn2-none">None</label>
 				<input type="radio" id="-btn2-W" name="ns" value="Wallops"/> <label for="-btn2-W">Wallops</label>
+				<!--Hide the following two inputs for production, keep for dev-->
 				<input type="radio" id="-btn2-A" name="ns" value="Assateague"/> <label for="-btn2-A">Assateague</label>
 				<input type="radio" id="-btn2-B" name="ns" value="Both"/> <label for="-btn2-B">Both</label>
 			</div>
