@@ -163,16 +163,16 @@ function ( Query, QueryTask, declare, FeatureLayer, lang, on ) {
 						t.obj.visibleLayers.push(t.obj.nourishWa)
 					}
 					// Comment out to no longer show "Areas with enhanced potential for inlet opening" layers
-					$.each(t.inlet1, lang.hitch(t,function(i,v){
-						if 	(t.obj.fsLyrName == v){
-							t.obj.visibleLayers.push(t.obj.inlet1Lyr)	
-						}	
-					}))
-					$.each(t.inlet2, lang.hitch(t,function(i,v){
-						if 	(t.obj.fsLyrName == v){
-							t.obj.visibleLayers.push(t.obj.inlet2Lyr)	
-						}	
-					}))	 		
+					// $.each(t.inlet1, lang.hitch(t,function(i,v){
+					// 	if 	(t.obj.fsLyrName == v){
+					// 		t.obj.visibleLayers.push(t.obj.inlet1Lyr)	
+					// 	}	
+					// }))
+					// $.each(t.inlet2, lang.hitch(t,function(i,v){
+					// 	if 	(t.obj.fsLyrName == v){
+					// 		t.obj.visibleLayers.push(t.obj.inlet2Lyr)	
+					// 	}	
+					// }))	 		
 					$.each(t.layersArray, lang.hitch(t,function(i,v){
 						if (t.obj.fsLyrName == v.name){
 							t.obj.visibleLayers.push(v.id);
