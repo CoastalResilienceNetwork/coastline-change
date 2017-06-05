@@ -7,8 +7,13 @@ function ( 	declare, PluginBase, ContentPane, dom, domStyle, domGeom, lang, obj,
 			content, ig, navigation, esriapi, clicks, stateCh, barChart ) {
 	return declare(PluginBase, {
 		// The height and width are set here when an infographic is defined. When the user click Continue it rebuilds the app window with whatever you put in.
+<<<<<<< HEAD
 		toolbarName: "Coastline Change", showServiceLayersInLegend: true, allowIdentifyWhenActive: false, rendered: false, resizable: false,
 		hasCustomPrint: true, usePrintPreviewMap: true, previewMapSize: [1000, 550], size:'custom', width:390,
+=======
+		toolbarName: "Coastline Change", fullName: "Coastline Change", showServiceLayersInLegend: true, allowIdentifyWhenActive: false, rendered: false, resizable: false,
+		hasCustomPrint: true, usePrintPreviewMap: true, previewMapSize: [1000, 550], height:"610", width:"430",
+>>>>>>> origin/master
 		//infoGraphic: 'plugins/coastline-change/assets/coastline_change_main_infographic.png',
 		infoGraphic: ig,
 		// First function called when the user clicks the pluging icon. 
