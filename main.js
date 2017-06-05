@@ -1,34 +1,21 @@
-// Pull in your favorite version of jquery 
-require({ 
-	packages: [{ name: "jquery", location: "http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/", main: "jquery.min" }] 
-});
 // Bring in dojo and javascript api classes as well as varObject.json, js files, and content.html
 define([
 	"dojo/_base/declare", "framework/PluginBase", "dijit/layout/ContentPane", "dojo/dom", "dojo/dom-style", "dojo/dom-geometry", "dojo/_base/lang", "dojo/text!./obj.json", 
-	"jquery", "dojo/text!./html/content.html", "dojo/text!./html/infoGraphic.html", './js/jquery-ui-1.11.2/jquery-ui', './js/navigation', './js/esriapi', './js/clicks', './js/stateCh', './js/barChart'
+	"dojo/text!./html/content.html", "dojo/text!./html/infoGraphic.html", './js/navigation', './js/esriapi', './js/clicks', './js/stateCh', './js/barChart'
 ],
 function ( 	declare, PluginBase, ContentPane, dom, domStyle, domGeom, lang, obj, 
-			$, content, ig, ui, navigation, esriapi, clicks, stateCh, barChart ) {
+			content, ig, navigation, esriapi, clicks, stateCh, barChart ) {
 	return declare(PluginBase, {
 		// The height and width are set here when an infographic is defined. When the user click Continue it rebuilds the app window with whatever you put in.
 		toolbarName: "Coastline Change", showServiceLayersInLegend: true, allowIdentifyWhenActive: false, rendered: false, resizable: false,
-		hasCustomPrint: true, usePrintPreviewMap: true, previewMapSize: [1000, 550], height:"610", width:"430",
+		hasCustomPrint: true, usePrintPreviewMap: true, previewMapSize: [1000, 550], size:'custom', width:390,
 		//infoGraphic: 'plugins/coastline-change/assets/coastline_change_main_infographic.png',
 		infoGraphic: ig,
 		// First function called when the user clicks the pluging icon. 
 		initialize: function (frameworkParameters) {
 			// Access framework parameters
 			declare.safeMixin(this, frameworkParameters);
-			// Set initial app size based on split screen state
-			this.con = dom.byId('plugins/coastline-change-0');
-			this.con1 = dom.byId('plugins/coastline-change-1');
-			if (this.con1 != undefined){
-				domStyle.set(this.con1, "width", "430px");
-				domStyle.set(this.con1, "height", "610px");
-			}else{
-				domStyle.set(this.con, "width", "430px");
-				domStyle.set(this.con, "height", "610px");
-			}	
+				
 			// Define object to access global variables from JSON object. Only add variables to varObject.json that are needed by Save and Share. 
 			this.obj = dojo.eval("[" + obj + "]")[0];	
 			this.url = "http://dev.services2.coastalresilience.org:6080/arcgis/rest/services/Virginia/va_coastline_change/MapServer";
@@ -92,17 +79,6 @@ function ( 	declare, PluginBase, ContentPane, dom, domStyle, domGeom, lang, obj,
 		beforePrint: function(printDeferred, $printArea, mapObject) {
 			printDeferred.resolve();
 		},	
-		// Resizes the plugin after a manual or programmatic plugin resize so the button pane on the bottom stays on the bottom.
-		// Tweak the numbers subtracted in the if and else statements to alter the size if it's not looking good.
-		resize1: function(w, h) {
-			cdg = domGeom.position(this.container);
-			if (cdg.h == 0) { this.sph = this.height - 10; }
-			else { this.sph = cdg.h - 2; }
-			// test
-			/*if (cdg.h == 0) { this.sph = this.height - 80; }
-			else { this.sph = cdg.h - 62; }*/
-			domStyle.set(this.appDiv.domNode, "height", this.sph + "px"); 
-		},
 		// Called by activate and builds the plugins elements and functions
 		render: function() {
 			
@@ -115,13 +91,18 @@ function ( 	declare, PluginBase, ContentPane, dom, domStyle, domGeom, lang, obj,
 			this.stateCh = new stateCh();
 			// ADD HTML TO APP
 			// Define Content Pane as HTML parent		
-			this.appDiv = new ContentPane({style:'padding:8px 8px 8px 8px; position:relative;'});
-			this.id = this.appDiv.id;
+			this.appDiv = new ContentPane({style:'color:#222; font-size:1em; padding:0 5px; flex:1; display:flex; flex-direction:column;'});
+			this.id = this.appDiv.id
 			dom.byId(this.container).appendChild(this.appDiv.domNode);					
+			$('#' + this.id).parent().addClass('sty_flexColumn')
+			$('#' + this.id).addClass('sty_wrap1')
+			if (this.obj.stateSet == "no"){
+				$('#' + this.id).parent().parent().css('display', 'flex')
+			}			
 			// Get html from content.html, prepend appDiv.id to html element id's, and add to appDiv
-			var idUpdate = content.replace(/id='/g, "id='" + this.id);	
+			var idUpdate0 = content.replace(/for="/g, 'for="' + this.id);	
+			var idUpdate = idUpdate0.replace(/id="/g, 'id="' + this.id);	
 			$('#' + this.id).html(idUpdate);
-			
 			//create slider bar
 			$('#' + this.id + 'multiShoreSlider').slider({ min: 0,	max: 13, value: 0, step: 1 });
 			
@@ -139,8 +120,6 @@ function ( 	declare, PluginBase, ContentPane, dom, domStyle, domGeom, lang, obj,
 			// UPDATE STATE IF SET STATE WAS CALLED
 			//this.stateCh.checkState(this);
 			this.rendered = true;	
-			// resize the container in the render function after the container is built.
-			this.resize1();
 		},
 	});
 });

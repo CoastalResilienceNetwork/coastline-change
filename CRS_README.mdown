@@ -1,0 +1,57 @@
+Instructions for Configuring the Community Rating System Plug-in
+
+Updating Parcel Data Once Published
+
+	1. Turn the map service off
+	2. Open a new arc map and add the database you wish to modify
+	3. Be sure that each parcel has the 'Carto_CRS_Name_All' field populated with the name of the community and/or map print order if applicable (ex. Dare County, NC Map 2 of 10)
+	4. If you make changes that will change the SUM values for an entire CRS, you must also update ALL_OSPs_For_Exports.shp to see these updates in export maps. 
+	3. Make your changes and close the untitled arcmap without saving 
+	3. Changes in values will show up in the GUI after the next time that region is built
+
+Updating GUI Text and Descriptions
+
+	1. From the Community Rating System repo, open the content.html
+	2. Make your changes, save, and close. 
+	3. Commit and sync those changes to github and they will show up in the GUI after the next time that region is built
+
+
+
+
+
+Updating Preprocessed Export Maps
+
+Data Driven Pages
+
+	1. Open the database containing the data for the app (ex. NC_CRS_Latest.gdb)
+	2. Open a new arcmap and import ALL_OSPs_For_Exports. This dataset controls the text, title, and extent 	of the export maps.
+	3. Add your new CRS community, populate the required fields. 
+		--> CRS_Name: Title of Export map as you want it to appear
+		--> scale: Map zoom scale
+		--> Print_Order: sequential map number
+		--> IA_Acres: Total area of impacted adjusted floodplain. Comes from SUM_IASFHA_AC from 		    dissolved dataset.
+		--> SumAcres: total area of OSP eligible parcels. Comes from SUM_OSP_LU_cac from dissolved dataset
+		--> NfosAcres: total area of NFOS eligible parcels. Comes from SUM_NFOS_cac from dissolved dataset
+
+Cartography
+
+	1. Open the mxd for the community you want to change (C:\ArcMap_docs\dev\CR_NC\CRS_Cartography).If you are modifying the CRS_Carto_All_Parcels.mxd, make changes and save.
+
+CSV Export Table
+	1. Import the parcel datatable into Excel and export it as a CSV. Then overwrite the on that’s on S3 with the one you created. 
+
+After all changes have been made:
+	1. Go to File, Export Map.
+	2. Set ’Save as type:' to PDF and then check the ‘Page Range’ radio button and leave the default range.
+	3. Save the PDF as the mxd's file name and move it to a computer with Adobe Acrobat. 
+	4. Open the PDF if Acrobat and hit File, Save As, Reduced Size PDF. If you do not have access to Adobe Acrobat, you can also use https://smallpdf.com/compress-pdf
+	5. Open Dragon Disk and navigate to the ‘crs-maps’ bucket.
+	6. Overwrite the existing PDF with the new PDF.
+	7. Download the zip file for the community you are changing. 
+	8. Open the zip file and replace the CEOS map the new map.
+	9. Re-zip the folder and overwrite the existing one on DragonDisk.
+	10. Click the ‘crs-maps’ bucket and hit the ‘Properties’ icon (hit OK if prompted with Access Denied)
+	11. Click the ‘Child Objects’ button on top and then hit the ‘Replace Permissions’ radio button.
+	12. Hit the ‘Add’ button and select ‘All Users’ and then click OK.
+	13. Check the ‘Download’ and ‘Read permissions’ checkboxes only and click OK.
+	14. Follow these steps for each map in each community.

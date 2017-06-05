@@ -1,7 +1,7 @@
 define([
-	"esri/tasks/query", "esri/tasks/QueryTask", "dojo/_base/declare", "esri/layers/FeatureLayer", "dojo/_base/lang", "dojo/on", "jquery", './jquery-ui-1.11.2/jquery-ui'
+	"esri/tasks/query", "esri/tasks/QueryTask", "dojo/_base/declare", "esri/layers/FeatureLayer", "dojo/_base/lang", "dojo/on"
 ],
-function ( Query, QueryTask, declare, FeatureLayer, lang, on, $, ui ) {
+function ( Query, QueryTask, declare, FeatureLayer, lang, on ) {
         "use strict";
 
         return declare(null, {
@@ -9,7 +9,7 @@ function ( Query, QueryTask, declare, FeatureLayer, lang, on, $, ui ) {
 				t.obj.sliderYearQuery = "CRToolDate = '" + t.obj.sliderYear + "'";
 				// Enable jquery plugin 'chosen'
 				require(["jquery", "plugins/coastline-change/js/chosen.jquery"],lang.hitch(this,function($) {
-					var configCrs =  { '.chosen-islands' : {allow_single_deselect:false, width:"186px", disable_search:true}}
+					var configCrs =  { '.chosen-islands' : {allow_single_deselect:false, width:"280px", disable_search:true}}
 					for (var selector in configCrs)  { $(selector).chosen(configCrs[selector]); }
 				}));
 				// User selections on chosen menus 
@@ -70,13 +70,9 @@ function ( Query, QueryTask, declare, FeatureLayer, lang, on, $, ui ) {
 					}));
 				}));
 				// HANDLE INDIVIDUAL SHORELINE CHECKBOX CLICKS AND CHECK ALL YEAR SHORELINES///////////////////////////////////////////////////////////////////////////////////
-				$('#' + t.id + 'ch-yearCheck .yearCbWrap').on('click',lang.hitch(this,function(c){
-					// if they click a label toggle the checkbox
-					if (c.target.checked == undefined){
-						$(c.currentTarget.children[0]).prop("checked", !$(c.currentTarget.children[0]).prop("checked") )	
-					}
+				$('#' + t.id + 'multiShoreCheck input').on('click',lang.hitch(this,function(c){
 					t.obj.checkedMultiYears = [];
-					$('#' + t.id + 'ch-yearCheck .yearCb').each(lang.hitch(t,function(i, v){
+					$('#' + t.id + 'multiShoreCheck input').each(lang.hitch(t,function(i, v){
 						if(v.checked == true){
 							var lyr = v.value + " Shoreline";
 							t.obj.checkedMultiYears.push(v.value)						
@@ -138,9 +134,9 @@ function ( Query, QueryTask, declare, FeatureLayer, lang, on, $, ui ) {
 							'Future Scenarios: Highest - Greater NE - Assateague', 'Future Scenarios: Highest - Greater NE - Both'];
 				t.inlet2 = ['Future Scenarios: High - Lesser NE - Both', 'Future Scenarios: Highest - Lesser NE - Both'];
 				// click on any of the buttons in the future wrapper section.
-				$('#' + t.id + 'futButtonWrapper .togBtn').on('click', lang.hitch(t,function(c){
+				$('#' + t.id + 'futButtonWrapper input').on('click', lang.hitch(t,function(c){
 					t.obj.visibleLayers = [t.obj.islandsLyr];
-					var nm = c.target.innerText;		
+					var nm = c.target.value;		
 					// Add conditional logic based on id of parent div
 					var pid = $('#' + c.currentTarget.id).parent().parent().prop('id');
 					if (pid == t.id + "riseWrapper"){
@@ -166,7 +162,7 @@ function ( Query, QueryTask, declare, FeatureLayer, lang, on, $, ui ) {
 						t.obj.visibleLayers.push(t.obj.nourishAs)
 						t.obj.visibleLayers.push(t.obj.nourishWa)
 					}
-					/* No longer showing "Areas with enhanced potential for inlet opening" layers
+					// Comment out to no longer show "Areas with enhanced potential for inlet opening" layers
 					$.each(t.inlet1, lang.hitch(t,function(i,v){
 						if 	(t.obj.fsLyrName == v){
 							t.obj.visibleLayers.push(t.obj.inlet1Lyr)	
@@ -176,7 +172,7 @@ function ( Query, QueryTask, declare, FeatureLayer, lang, on, $, ui ) {
 						if 	(t.obj.fsLyrName == v){
 							t.obj.visibleLayers.push(t.obj.inlet2Lyr)	
 						}	
-					}))	 */		
+					}))	 		
 					$.each(t.layersArray, lang.hitch(t,function(i,v){
 						if (t.obj.fsLyrName == v.name){
 							t.obj.visibleLayers.push(v.id);
@@ -210,6 +206,7 @@ function ( Query, QueryTask, declare, FeatureLayer, lang, on, $, ui ) {
 						de = de + ", '" + v + "'";
 					}
 				}))
+				console.log(de)
 				t.obj.sliderYearQuery = "CRToolDate IN (" + de + ")";
 				t.clicks.setSliderYear(t);
 			},	

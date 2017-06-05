@@ -1,0 +1,257 @@
+/* accordian styles */
+.ui-accordion .ui-accordion-content{
+	padding:0.5em;	
+}
+.ui-accordion .ui-accordion-header .ui-accordion-header-icon {
+	left:0em;	
+}	
+.ui-accordion .ui-accordion-icons {
+	padding-left:1.2em !important;
+}
+.ui-accordion .ui-accordion-header {
+	color:#000; margin:0; padding:.8em .5em .8em .7em; font-size:1.4rem; text-align:left;
+}
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover{
+	background:#f3f3f3; text-shadow:1px 1px #cdcdcd;
+	/*background:#dce6f0*/
+}
+.ui-accordion-header-active  {
+	font-weight:bold; box-shadow:0 2px 4px rgba(0, 0, 0, 0.25); border:solid 1px #999;
+}	
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+    border: 1px solid #aaa; color: #555555;
+}	
+.ui-widget-content {
+    border-left: 1px solid #aaaaaa; border-right: 1px solid #aaaaaa; border-bottom-width:0;	
+	box-shadow:inset 0 -2px 4px rgba(0, 0, 0, 0.25); 
+}
+.sty_wrap .ui-widget-content{
+	color:#73787d;
+}
+.sty_wrap1 .ui-widget-content{
+	color:#222;
+}	
+/* slider styles */
+.ui-slider-horizontal {
+	height:11px; border:1px solid #ddd;
+}
+.sty_wrap .ui-widget-content, .sty_wrap1 .ui-widget-content {
+    border: 1px solid #ddddd; background: #fff; box-shadow:none; margin-bottom:-1px;
+}
+.ui-slider-horizontal .ui-slider-handle {
+	border-color: rgba(16, 22, 26, .1) rgba(16, 22, 26, .1) rgba(16, 22, 26, .3)!important;
+	background: linear-gradient(180deg, hsla(0, 0%, 100%, .1), hsla(0, 0%, 100%, 0)) 0 no-repeat, 50% no-repeat #4b9caf !important;
+	border-radius: 100% !important;	width: 17px !important;	height: 17px !important; box-shadow: 0 1px 1px rgba(16, 22, 26, .1)!important;
+}
+.sty_wrap1 .ui-slider-horizontal .ui-slider-handle {
+	background: linear-gradient(180deg, hsla(0, 0%, 100%, .1), hsla(0, 0%, 100%, 0)) 0 no-repeat, 50% no-repeat #0096D6 !important;
+	cursor:pointer;
+}
+.sty_wrap1 .form-component input[type=checkbox]:checked~.check, .sty_wrap1 .form-component input[type=radio]:checked~.check {
+	background:#0096D6; background:linear-gradient(180deg,hsla(0,0%,100%,.1),hsla(0,0%,100%,0)) 0 no-repeat,50% no-repeat #0096D6; 
+}
+.sty_wrap1 .form-component:hover{
+	cursor:pointer;
+}
+.slider-container .slider.ui-widget-content {
+    background: transparent !important;
+}
+.sty_wrap .ui-widget-header {
+	background: #ededed !important;
+}
+.sty_wrap .ui-corner-all, .sty_wrap1 .ui-corner-all{
+	border-bottom-right-radius: 2px; border-bottom-left-radius: 2px; border-top-right-radius: 2px; border-top-left-radius: 2px;
+}
+/* toggle buttons */
+.sty_togBtn{
+	padding:4px; text-decoration:none; -moz-border-radius:1px; -webkit-border-radius:1px; border-radius:1px; -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.5); box-shadow: 0 1px 2px rgba(0,0,0,0.5); border-bottom: 1px solid rgba(0,0,0,0.25); outline:none; position:relative;
+	font-size:1.4rem; margin:5px; background-color:#f4f4f4; color:#000; text-shadow:0 -1px 1px rgba(255,255,255,0.25); font-weight:100; text-align:center;
+	border:1px solid gray; border-right: 1px solid #676767; border-left: 1px solid #676767; margin-left:-6px; 
+}		
+.sty_togBtnSel{
+	border-bottom: 1px solid #a6a6a6; background-color:#e8f5fe; color:#000; text-shadow:0 1px 1px rgba(0,0,0,0.25);
+	box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5); 
+}	
+.sty_togBtn:hover{
+	background-color:#b8e1fc; cursor:pointer; text-shadow: 0 1px 1px rgba(0,0,0,0.25)
+}
+.sty_togBtn:active{
+	box-shadow: 1px 0px 3px rgba(0,0,0,0.5); text-shadow: 0 1px 1px rgba(0,0,0,0.25); 
+}
+.sty_togBtnSel:hover{
+	background-color:#e8f5fe; cursor:default; color:#000;
+}
+
+/* Chosen select menu elements */
+.chosen-container-single .chosen-single{
+	padding: 0px 0 0 8px; font-size:1.4rem; height:26px; text-align:left; color:#000;
+}
+.chosen-container-single .chosen-default, .chosen-container-multi .chosen-choices li.search-field input[type="text"]{
+	color:#444;
+}
+.chosen-container-single .chosen-single abbr{
+	right:16px;
+}
+.chosen-container-single .chosen-single span{
+	margin-right:20px; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+}
+.chosen-container-single .chosen-single-with-deselect span{
+	margin-right:20px; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+}
+.chosen-container ul.chosen-results li.highlighted {
+  background-color: #29658C; background-image: none; color:#fff; font-size:1.4rem; text-shadow:0 -1px 1px rgba(0,0,0,0.25); font-weight:100;
+}
+.active-result{
+	font-size:1.4rem;
+}
+abbr.search-choice-close {
+  cursor: pointer;
+}
+
+/* Layout Styles */
+.sty_flexRow{
+	display:flex; flex-direction:row; align-items:center; 
+}
+.sty_flexRowCenter{
+	display:flex; flex-direction:row; justify-content:center; align-items:center; font-size:1.4rem;
+}
+.sty_flexColumn{
+	display:flex; flex-direction:column;
+}
+.sty_flexColumnCenter{
+	display:flex; flex-direction:column; justify-content:center; font-size:1.4rem;
+}
+.sty_flex1{
+	flex:1;
+}
+.sty_flex2{
+	flex:2;
+}
+.sty_flex3{
+	flex:3;
+}
+.sty_flex4{
+	flex:4;
+}	
+.sty_hide{
+	display:none;
+}
+.sty_bold{
+	font-weight:bold;
+}
+.sty_1stIndent{
+	margin-left:8px;
+}
+.sty_topMargin{
+	margin-top:5px;
+}
+.sty_blueFont{
+	color:#21658c;
+}
+.sty_blueHeader{
+	font-size:1.4rem; text-align:center; margin-top:10px; color:#21658c; font-weight:bold;
+}
+.sty_underlineHeader{
+	font-size:1em; text-decoration:underline; text-align:left; margin:10px 4px 0px 5px; 
+}
+.sty_underlineInfoHeader{
+	font-size:1em; text-decoration:underline; text-align:left; margin:10px 0px -2px 0px; 
+}
+.sty_firstIndentHeader{
+	margin-bottom:0px; margin-left:9px; margin-top:5px; font-size:1.4rem;
+}
+.sty_headerCentered{
+	margin-bottom:0px; margin-top:5px; font-size:1.4rem; text-align:center;
+}
+.sty_headerUnderlineCentered{
+	margin-bottom:0px; margin-top:5px; font-size:1.4rem; text-align:center; text-decoration:underline;
+}
+.sty_firstIndentFlexRow{
+	margin-bottom:0px; margin-left:9px;	display:flex; margin-top:0px; font-size:1.4rem;
+}
+.sty_cbwLabel{
+	font-size:1.4rem; padding:2px 0px 2px 17px; vertical-align:middle; text-align:left; color:#000; 
+	text-indent:-17px; cursor:pointer; 
+}
+.sty_smFontHeader{
+	font-size:1em; text-align:left; margin: 10px 0px -4px 6px; text-decoration:underline;
+}
+.sty_infoIcon{
+	margin-bottom:-2px; margin-left:3px; cursor:pointer;
+}
+.sty_sectionWrap{
+	margin-left:5px; 	
+}
+.sty_cbRangeWrap{
+	margin-bottom:0px; margin-left:3px;	
+}
+.sty_cbWrap{
+	font-size:1.4rem; text-align:left; display:inline-block;
+}
+.sty_cbStackedWrap{
+	font-size:14pt; text-align:left; display:inline-block; margin-top:5px;
+}
+.sty_cbLabel{
+	display:inline-block; margin-left:2px; font-size:1.4rem; padding:2px 0px 2px 17px; vertical-align:middle; text-align:left; color:#000; 
+	text-indent:-17px; cursor:pointer; margin-right:10px;
+}
+.sty_cbLabel span{
+	text-indent:0px; font-size:1.3rem;
+}	
+.sty_cb{
+	cursor:pointer; margin-right:5px; 
+}
+.sty_rangeWrap{
+	margin-bottom:12px; margin-left:16px; margin-top:4px; font-size:1em;
+}	
+.sty_leftSlider{
+	display:inline-block; margin-left:0px; margin-right:8px; font-size:1em;
+}
+.sty_goodBadPics{
+	display:inline-block; width:10px; height:10px; margin:0 4px -1px 4px; 
+}	
+.sty_rightSlider{
+	display:inline-block; margin-left:5px; font-size:1em;
+}
+.sty_getHelpBtnWrap{
+    background-color:#dce6f0; padding:10px 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.25); z-index:500;
+}	
+.sty_getHelpBtn1{
+	background-color:#5e94b6; font-size:1.5rem; line-height:1.5; padding:.6rem 1.4rem; text-shadow:1px 1px 1px rgba(30,30,30,0.7);
+    text-align:center; cursor:pointer; color:#FFF; border-radius:3px; box-shadow: 0 1px 2px rgba(0,0,0,1); font-weight:bold;
+}	
+.sty_getHelpBtn{
+	background-color:#fff; font-size:1.5rem; line-height:1.5; padding:.6rem 1.4rem;	text-shadow:1px 1px 1px rgba(210, 210, 210, 0.5); text-align:center; 
+	color:#316483; border-radius:3px; box-shadow:0 1px 2px rgba(0, 0, 0, 1); border-top:1px solid #888; font-weight:bold;
+}
+.sty_getHelpBtn:hover{
+	    box-shadow:0 1px 2px rgba(0,0,0,0.5); border-top:1px solid rgba(136,136,136,0.5); cursor:pointer;
+}	
+.sty_explainWrap p{
+	font-size:1em; margin-top:5px; margin-bottom:5px; text-align:left;
+}
+.sty_anchor{
+	color:#4b9caf !important; margin:0 !important;
+}
+.sty_anchor:hover{
+	color:#222 !important;
+}	
+.plugin-minimize{
+	display:none;
+}
+
+.nav-apps-button.active {
+    background-color: #333333 !important;
+}
+.nav-apps-button.active.app-displayed {
+    background-color: #0096D6 !important;
+}
+
+/* fix the accordion height issue in Safari */
+.sidebar-content{
+	height:auto !important;
+}
+
+.sty_wrap1 h3{
+	margin-bottom:1rem;

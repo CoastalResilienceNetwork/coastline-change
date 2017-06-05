@@ -2,48 +2,41 @@ body.waiting * {
     cursor: progress;
 }	
 .largeHeader{
-	font-size:16pt; font-weight:100; margin-bottom:5px;
+	font-weight:100; margin-bottom:5px;
 }
 .medHeader{
-	font-size:14pt; font-weight:100; margin-bottom:5px;
+	font-weight:100; margin-bottom:5px;
 }
 .medSmHeader{
-	font-size:13pt; font-weight:100; margin-bottom:5px;
+	font-weight:100; margin-bottom:5px;
 }	
 .smallHeader{
-	font-size:12pt; margin-bottom:5px;
+	margin-bottom:5px;
 }
 .explanations{
-	font-size:11pt; margin-left:15px; margin-top:4px; color:#21658c; margin-right:10px;
+	margin-left:15px; margin-top:4px; color:#21658c; margin-right:10px;
 }	
 .multiShoreCheck, .futureWrapper, .historicalShoreWrapper, .futureInfo, .historicInfo{
 	display:none;
 }	
-.futureWrapper{
-	margin-top:10px;	
-}	
-.zdis{
-	position:absolute; top:16px; right:32px; color:#21658c;	width:170px; background-color:#e8f5fe; text-shadow:0 1px 1px rgba(0,0,0,0.25);
-	text-align:center; font-size:12pt;
-}
 .multiShoreSlider{
-	width: 350px; margin-left:20px;
+	width:340px; margin-left:20px;
 }
 .multiShoreSlider label{
-	position: absolute; width: 50px; margin-left: -26px; text-align: left; margin-top: 30px; transform: rotate(90deg);
-	font-size:10pt; text-align:left;
+	position: absolute; width: 54px; margin-left: -26px; text-align: left; margin-top: 30px; transform: rotate(90deg);
+	text-align:left;
 }
 .ch-yearCheck{
 	width:80%; columns:3; margin:auto; margin-top:10px; 
 }
 .ch-yearCheck label{
-	font-size:12pt; margin-left:5px; padding:2px; margin-bottom:1.5px; text-align:left;
+	margin-left:5px; padding:2px; margin-bottom:1.5px; text-align:left;
 }
 hr.hrStyle {
     border: 0; height: 1px;  background-image: linear-gradient(to right, #ccc, #29658C, #ccc); margin:12px 0 12px;
 }
 .chartTitle{
-	font-size:13pt; margin-top:30px; margin-bottom:14px; text-align:center;
+	margin-top:30px; margin-bottom:14px; text-align:center;
 }
 .multiShoreLine{
 	display:none; margin-top:10px;
@@ -55,11 +48,14 @@ hr.hrStyle {
 	width:85%; margin:auto; display:block;
 }
 /* Chosen select menu elements */
+.chosen-container{
+	font-size:1em;
+}	
 .chosen-container-single .chosen-single{
-	padding: 0px 0 0 8px; font-size:12pt; height:26px; text-align:left; color:#000;
+	padding: 0px 0 0 8px; height:26px; text-align:left; color:#000;
 }
 .chosen-container-single .chosen-default, .chosen-container-multi .chosen-choices li.search-field input[type="text"]{
-	color:#444;
+	color:#222;
 }
 .chosen-container-single .chosen-single abbr{
 	right:16px;
@@ -71,10 +67,10 @@ hr.hrStyle {
 	margin-right:20px; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
 }
 .chosen-container ul.chosen-results li.highlighted {
-  background-color: #29658C; background-image: none; color:#fff; font-size:12pt; text-shadow:0 -1px 1px rgba(0,0,0,0.25); font-weight:100;
+  background-color: #29658C; background-image: none; color:#fff; text-shadow:0 -1px 1px rgba(0,0,0,0.25); font-weight:100;
 }
 .active-result{
-	font-size:12pt;
+	
 }
 abbr.search-choice-close {
   cursor: pointer;
@@ -88,19 +84,14 @@ abbr.search-choice-close {
 	width:252px; margin:0 auto; text-align:center;
 }
 .leftSliderLabel{
-	display:inline-block; margin-right:9px; font-size:10pt;
+	display:inline-block; margin-right:9px; 
 }
 .slider{
 	width:100px; display:inline-block;
 }
-.ui-slider-horizontal {
-	height: 5px;
-}
-.ui-slider-horizontal .ui-slider-handle {
-	height:15px; width:15px; margin-top:-1px;
-}
+
 .rightSliderLabel{
-	display:inline-block; margin-left:5px; font-size:10pt;
+	display:inline-block; margin-left:5px; 
 }
 .transectWrap span{
 	font-weight:bold;
@@ -109,7 +100,7 @@ abbr.search-choice-close {
 	display:none;
 }
 .barWrapper {
-	width: 346px; height: 25px; position: relative; left:34px; margin-bottom:4px; background-color:#333; float:left;
+	width:346px; height:25px; position:relative; left:26px; margin-bottom:4px; background-color:#333; float:left;
 }
 .bars{
 	position: absolute; display: block; width: 342px; height: 20px; border: 0; left: 0px; bottom: 0%; float:left; color:black;
@@ -124,7 +115,7 @@ abbr.search-choice-close {
 	border-top:1px solid #424542; border-right:1px solid #424542;
 }
 .barLabel{
-	position:relative; z-index:2; left:.5px; top:3px; font-size:13pt; padding:5px; text-shadow: 0 1px 1px rgba(255,255,255,0.45); font-weight: bold;
+	position:relative; z-index:2; left:.5px; top:3px;  padding:5px; text-shadow: 0 1px 1px rgba(255,255,255,0.45); font-weight: bold;
 }
 .bar3{
 	background: repeating-linear-gradient(45deg, #ecefde, #ecefde 5px, #ccc 5px, #ccc 10px);
@@ -139,7 +130,7 @@ abbr.search-choice-close {
 	background-color:#c8841d;
 }
 .topLabel{
-	margin-left:9px; margin-bottom:-5px;
+	margin-left:15px; margin-bottom:-5px;
 }
 .hide{
 	display:none;
@@ -151,7 +142,7 @@ abbr.search-choice-close {
 	height:48px !important;
 }
 .graphLegLbl{
-	display:inline-block; margin-top:3px; margin-left:3px; font-size:13pt; vertical-align:middle;
+	display:inline-block; margin-top:3px; margin-left:3px; vertical-align:middle;
 }
 .graphLegend{
 	height: 25px; display:inline-block;
@@ -160,10 +151,10 @@ abbr.search-choice-close {
 	box-shadow: inset 1px 2px 2px rgba(255, 255, 255, .4), inset -1px -1px 2px rgba(0, 0, 0, .4);
 }
 .bar2a{
-	margin-left:7px; border-bottom:2pt solid #408cb4; display:inline-block; font-size:13pt; 
+	margin-left:7px; border-bottom:2pt solid #408cb4; display:inline-block; 
 }
 .bar2b{
-	margin-left:7px; border-bottom:2pt solid #c8841d; display:inline-block; font-size:13pt; 
+	margin-left:7px; border-bottom:2pt solid #c8841d; display:inline-block;  
 }
 .barfa{
 	margin-left:7px;
@@ -172,24 +163,23 @@ abbr.search-choice-close {
 	height:20px; width:100%; display:inline-block; text-align:center; margin-bottom:10px; margin-left:-12px;
 }
 .lineHeader1{
-	font-size:12pt; display:inline-block; font-weight:bold; text-align:left; width:150px; padding-left:14px; text-indent:-14px; 
-	vertical-align:middle;
+	font-weight:bold; text-align:left; 
 }
 .lineHeader2{
-	font-size:12pt; display:inline-block; font-weight:bold; text-align:left; width:120px; padding-left:14px; text-indent:-14px; 
+	display:inline-block; font-weight:bold; text-align:left; width:120px; padding-left:14px; text-indent:-14px; 
 	vertical-align:middle;
 }
 .lineHeader3{
-	font-size:12pt; font-weight:bold; text-align:left; margin-bottom:3px;
+	font-weight:bold; text-align:left; margin-bottom:3px;
 }
 .lineHeader3a{
-	font-size:13pt; text-align:left; margin-bottom:3px; margin-left:10px;
+	text-align:left; margin-bottom:3px; margin-left:10px;
 }
 .sectionHeader{
-	font-size:12pt; font-weight:bold; text-align:center; 
+	font-weight:bold; text-align:center; 
 }
 .futureCbLabel{
-	font-size:12pt; font-weight:bold; text-align:left; display:inline-block; 
+	font-weight:bold; text-align:left; display:inline-block; 
 }
 .lineWrap{
 	margin-top:10px; margin-left:10px; text-align:left;
@@ -198,28 +188,26 @@ abbr.search-choice-close {
 	width:100%; text-align:center; margin-top:10px; margin-bottom:20px;
 }
 .lineWrapCenter1{
-	width:100%; margin-top:-5px; margin-bottom:-5px;
+	width:100%;
 }
-/* .pdfLink, .moreInfo{
-	font-size:12pt; color:blue; cursor:pointer;	display:inline-block; float:left; margin-left:-69px; margin-bottom:5px; width:225px;
-} */	
+	
 .pdfLink:active{
 	color:blue; font-weight:normal; 
 }
 .pdfLink{
-	font-size:12pt; color:blue; cursor:pointer;
+	color:blue; cursor:pointer;
 }
 .helpLink{
-	display:flex; padding:5px;
+	width:100%; display:flex; margin: 8px 5px -10px 0px;
 }
 .helpLink1, .helpLink2{
-	font-size:12pt; color:blue; cursor:pointer; flex:1;
+	color:blue; cursor:pointer; flex:1;
 }
 .helpLink1{
-	margin-left:6px;
+
 }
 .helpLink2{
-	text-align:right; margin-right:10px;
+	text-align:right; margin-right:2px;
 }
 
 .moreInfo:hover{
@@ -229,13 +217,13 @@ abbr.search-choice-close {
 	text-align:center; margin-top:0px; margin-bottom:10px; margin-left:12px;	
 }
 .selectWrapper{
-	margin:-10px; display:inline-block;
+	margin:auto; width:280px;
 }
 .yearCbLabel{
 	display:inline-block;
 }
 .yearCbWrap{
-	font-size:12pt; text-align:left; 
+	text-align:left; 
 }
 .yearCb{
 	cursor:pointer;
@@ -255,4 +243,10 @@ abbr.search-choice-close {
 }	
 .futureCb{
 	margin-right:5px;
+}	
+.cc_mulCbWrap{
+	display:flex; width:300px; margin:auto; margin-left:58px;
+}	
+.cc_mulCb{
+	flex:1; text-align:left;
 }	

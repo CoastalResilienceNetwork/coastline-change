@@ -6,6 +6,7 @@
 		"plugins/coastline-change/css/chosen.css",
 		"plugins/coastline-change/css/barChart.css",
 		"plugins/coastline-change/css/toggleButtons.css",
+		"plugins/coastline-change/css/appStyles.css",
 		"plugins/coastline-change/css/main.css"
     ],
     "use": {
