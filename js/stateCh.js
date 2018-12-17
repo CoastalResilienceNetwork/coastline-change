@@ -1,7 +1,7 @@
 define([
-	"dojo/_base/declare", "dojo/_base/lang", "dojo/on", "jquery" 
+	"dojo/_base/declare", "dojo/_base/lang", "dojo/on" 
 ],
-function ( declare, lang, on, $ ) {
+function ( declare, lang, on ) {
         "use strict";
 
         return declare(null, {
