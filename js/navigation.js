@@ -173,7 +173,7 @@ function ( declare, domStyle, lang, on, Query, QueryTask, Extent, SpatialReferen
 				}));
 			},
 			setNavBtns: function(t){
-				$('#' + t.id + t.obj.section).trigger('click');
+				//$('#' + t.id + t.obj.section).trigger('click');
 				if (t.obj.section == 'historicalBtn'){
 					$('#' + t.appDiv.id + 'ch-ISL').val(t.obj.islSelected).trigger('chosen:updated').trigger('change');
 					// click change rate or historic shorelines
@@ -187,6 +187,7 @@ function ( declare, domStyle, lang, on, Query, QueryTask, Extent, SpatialReferen
 					$('#' + t.id + 'multiShoreSlider').slider('value', t.obj.sliderCounter);	
 					
 				}	
+				$('#' + t.id + t.obj.section).trigger('click');
 			}	
         });
     }

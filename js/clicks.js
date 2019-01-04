@@ -8,12 +8,14 @@ function ( Query, QueryTask, declare, FeatureLayer, lang, on ) {
 			chosenListeners: function(t){
 				t.obj.sliderYearQuery = "CRToolDate = '" + t.obj.sliderYear + "'";
 				// Enable jquery plugin 'chosen'
-				require(["jquery", "plugins/coastline-change/js/chosen.jquery"],lang.hitch(this,function($) {
-					var configCrs =  { '.chosen-islands' : {allow_single_deselect:false, width:"280px", disable_search:true}}
-					for (var selector in configCrs)  { $(selector).chosen(configCrs[selector]); }
-				}));
+				//require(["jquery", "plugins/coastline-change/js/chosen.jquery"],lang.hitch(this,function($) {
+				var configCrs =  { '.chosen-islands' : {allow_single_deselect:false, width:"280px", disable_search:true}}
+				for (var selector in configCrs)  { 
+					$(selector).chosen(configCrs[selector]); 
+				}
+				//}));
 				// User selections on chosen menus 
-				require(["jquery", "plugins/coastline-change/js/chosen.jquery"],lang.hitch(t,function($) {	
+				//require(["jquery", "plugins/coastline-change/js/chosen.jquery"],lang.hitch(t,function($) {	
 					//Select CRS 
 					$('#' + t.id + 'ch-ISL').chosen().change(lang.hitch(t,function(c, p){
 						t.obj.islSelected = c.currentTarget.value;
@@ -58,6 +60,7 @@ function ( Query, QueryTask, declare, FeatureLayer, lang, on ) {
 							q1.where = "IslandName <> 'xyz'";
 							t.islandPolygons.selectFeatures(q1,FeatureLayer.SELECTION_NEW);
 							// zoom to eastern shore
+							
 							t.map.setExtent(t.obj.initialExtent, true);
 						}
 						t.esriapi.changeRatePercent(t);
@@ -68,7 +71,7 @@ function ( Query, QueryTask, declare, FeatureLayer, lang, on ) {
 							t.obj.trigger = 'dropDown'
 						}
 					}));
-				}));
+				//}));
 				// HANDLE INDIVIDUAL SHORELINE CHECKBOX CLICKS AND CHECK ALL YEAR SHORELINES///////////////////////////////////////////////////////////////////////////////////
 				$('#' + t.id + 'multiShoreCheck input').on('click',lang.hitch(this,function(c){
 					t.obj.checkedMultiYears = [];
